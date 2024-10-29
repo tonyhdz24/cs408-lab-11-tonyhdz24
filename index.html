@@ -1,63 +1,70 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Test AWS Lambda</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
-</head>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
 
-<body>
+  <body>
+    <!-- Main content -->
+    <main>
+      <section class="all-items">
+        <h1>A Simple Inventory App</h1>
+        <button id="btn-load-items">Load All Items</button>
+
+        <table id="items-table">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="items-table-body">
+            <tr>
+              <td>...</td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section class="item-form">
+        <form action="/items">
+          <h2>Add New Item to Database</h2>
+          <label for="item-id">ID: </label>
+          <input type="text" name="item-id" id="item-id" />
+          <label for="item-name">Name: </label>
+          <input type="text" name="item-name" id="item-name" />
+          <label for="item-price">Price: </label>
+          <input type="number" name="item-price" id="item-price" />
+          <button type="submit">Add Item</button>
+        </form>
+      </section>
+    </main>
+    <hr />
+
     <h1>Simple Demo for PUT, GET, and DELETE</h1>
     <p id="lambda-info">
-        <!-- loaded with AJAX -->
+      <!-- loaded with AJAX -->
     </p>
 
-    <hr>
+    <hr />
     <button id="send-data">Send Data</button>
     <p>Sends an example JSON object to the server with id 11111</p>
-    <script>
-        document.getElementById("send-data").onclick = function () {
-            let xhr = new XMLHttpRequest();
-            xhr.open("PUT", "Your Lambda here");
-            xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.send(JSON.stringify({
-                "id": "6666666",
-                "price": 19,
-                "name": "test put value"
-            }));
-        }
-    </script>
 
     <button id="load-data">Load Data</button>
     <p>Loads data from the server</p>
-    <script>
-        document.getElementById("load-data").onclick = function () {
-            let lambda = document.getElementById("lambda-info");
-            let xhr = new XMLHttpRequest();
-            xhr.addEventListener("load", function () {
-                lambda.innerHTML = xhr.response;
-            });
-            xhr.open("GET", "Your Lambda here");
-            xhr.send();
-        }
 
-    </script>
-
-    <hr>
+    <hr />
     <button id="delete-data">Delete Data</button>
     <p>Deletes a JSON object from the server with 11111</p>
-    <script>
-        document.getElementById("delete-data").onclick = function () {
-            let xhr = new XMLHttpRequest();
-            xhr.open("DELETE", "Your Lambda here");
-            xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.send();
-        }
-    </script>
-</body>
-
+    <script src="/js/main.js"></script>
+  </body>
 </html>
