@@ -64,11 +64,21 @@ btnLoadAllItems.onclick = () => {
     loadAllItems();
   } else {
     console.log("Table already loaded");
+    alert("All Items already loaded");
   }
 };
 
 // Event listener for "Add Item" button to add a new item to the database and table
 btnAddItem.onclick = function () {
+  // Check if inputs are empty
+  if (
+    !itemID.value.trim() ||
+    !itemName.value.trim() ||
+    !itemPrice.value.trim()
+  ) {
+    alert("Please fill in all fields."); // Alert the user if any field is empty
+    return; // Exit the function if validation fails
+  }
   let xhr = new XMLHttpRequest();
   xhr.open(
     "PUT",
