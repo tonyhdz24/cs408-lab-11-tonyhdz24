@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Test AWS Lambda</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
     <link rel="stylesheet" href="/css/style.css" />
   </head>
 
@@ -13,7 +14,9 @@
     <!-- Main content -->
     <main>
       <section class="all-items">
-        <h1>A Simple Inventory App</h1>
+        <section class="header">
+          <h1>A Simple Inventory App</h1>
+        </section class="header">
         <button id="btn-load-items">Load All Items</button>
 
         <table id="items-table">
@@ -38,13 +41,21 @@
       <section class="item-form">
         <div class="new-item-form">
           <h2>Add New Item to Database</h2>
-          <label for="item-id">ID: </label>
-          <input type="text" name="item-id" id="item-id" />
-          <label for="item-name">Name: </label>
-          <input type="text" name="item-name" id="item-name" />
-          <label for="item-price">Price: </label>
-          <input type="number" name="item-price" id="item-price" />
-          <button type="submit" id="new-item-submit">Add Item</button>
+          <div class="form-inputs">
+            <div class="form-input">
+              <label for="item-id">ID: </label>
+              <input type="text" name="item-id" id="item-id" />
+            </div>
+            <div class="form-input">
+              <label for="item-name">Name: </label>
+              <input type="text" name="item-name" id="item-name" />
+            </div>
+            <div class="form-input">
+              <label for="item-price">Price: </label>
+              <input type="number" name="item-price" id="item-price" />
+            </div>
+            <button type="submit" class="btnAdd" id="new-item-submit">Add Item</button>
+          </div>
         </div>
       </section>
     </main>
