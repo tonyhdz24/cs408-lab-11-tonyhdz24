@@ -84,7 +84,8 @@ label {
 }
 
 input {
-  flex: 1; /* Allows input to take up available space without pushing label */
+  width: 100%;
+  flex: 1; /*Allows input to take up available space without pushing label*/
 }
 #new-item-submit {
   align-self: flex-end;
