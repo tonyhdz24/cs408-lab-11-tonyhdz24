@@ -36,7 +36,7 @@
         </table>
       </section>
       <section class="item-form">
-        <form action="/items">
+        <div class="new-item-form">
           <h2>Add New Item to Database</h2>
           <label for="item-id">ID: </label>
           <input type="text" name="item-id" id="item-id" />
@@ -44,27 +44,12 @@
           <input type="text" name="item-name" id="item-name" />
           <label for="item-price">Price: </label>
           <input type="number" name="item-price" id="item-price" />
-          <button type="submit">Add Item</button>
-        </form>
+          <button type="submit" id="new-item-submit">Add Item</button>
+        </div>
       </section>
     </main>
     <hr />
 
-    <h1>Simple Demo for PUT, GET, and DELETE</h1>
-    <p id="lambda-info">
-      <!-- loaded with AJAX -->
-    </p>
-
-    <hr />
-    <button id="send-data">Send Data</button>
-    <p>Sends an example JSON object to the server with id 11111</p>
-
-    <button id="load-data">Load Data</button>
-    <p>Loads data from the server</p>
-
-    <hr />
-    <button id="delete-data">Delete Data</button>
-    <p>Deletes a JSON object from the server with 11111</p>
     <script src="/js/main.js"></script>
   </body>
 </html>
